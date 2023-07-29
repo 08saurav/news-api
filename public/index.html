@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Latest News</h1>
+    </header>
+    <main>
+      <form id="search-form">
+        <div class="search-inputs">
+          <label for="search-input">Search News:</label>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Enter keywords..."
+          />
+        </div>
+        <div class="search-inputs">
+          <label for="search-in">Search In:</label>
+          <select id="search-in">
+            <option value="title">Title</option>
+            <option value="description">Description</option>
+            <option value="content">Content</option>
+          </select>
+        </div>
+        <div class="search-inputs">
+          <label for="news-count">Number of Articles:</label>
+          <input type="number" id="news-count" min="1" max="100" value="10" />
+        </div>
+        <button type="submit">Search</button>
+      </form>
+      <div id="news-container"></div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
