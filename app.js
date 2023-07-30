@@ -60,7 +60,9 @@ app.get("/api/news", async (req, res) => {
   }
 });
 
-const PORT = 3000;
+const PORT = 443;
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(
+    `Server is running on https://news-api-nzy3.onrender.com/:${PORT}`
+  );
 });

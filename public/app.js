@@ -1,6 +1,6 @@
 // Define the API endpoint URL (update it to match your backend's route)
-const apiUrl = "http://localhost:3000/api/news";
-// const apiUrl = "http://localhost:3000/api/news";
+// const apiUrl = "http://localhost:3000/api/news"; --uncomment this for local
+const apiUrl = "https://news-api-nzy3.onrender.com/api/news";
 
 async function getNews(url) {
   try {
