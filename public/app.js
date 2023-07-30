@@ -6,6 +6,7 @@ async function getNews(url) {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    console.log(data, url);
     const newsContainer = document.getElementById("news-container");
 
     // Clear previous news
@@ -47,10 +48,18 @@ document.addEventListener("DOMContentLoaded", () => {
   searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const searchInput = document.getElementById("search-input").value.trim();
-    const newsCountInput = document.getElementById("news-count").value;
-    const searchInInput = document.getElementById("search-in").value;
-
+    let searchInput = document.getElementById("search-input").value.trim();
+    let newsCountInput = document.getElementById("news-count").value;
+    let searchInInput = document.getElementById("search-in").value;
+    if (searchInput === "") {
+      searchInput = "Any";
+    }
+    if (newsCountInput === "") {
+      newsCountInput = "10";
+    }
+    if (searchInput === "") {
+      searchInInput = "title";
+    }
     const queryParams = new URLSearchParams({
       q: searchInput,
       n: newsCountInput,

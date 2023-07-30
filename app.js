@@ -26,7 +26,12 @@ app.get("/health", (req, res) => {
 // API endpoint for fetching news articles
 app.get("/api/news", async (req, res) => {
   try {
-    const { n, q, in: searchIn } = req.query;
+    const q = req.query.q || "technology"; // Use 'technology' as default if title (q) is not provided
+    const n = req.query.n || 10;
+    // Use 10 as default if number (n) is not provided
+    const searchIn = req.query.in;
+
+    // const { n, q, in: searchIn } = req.query;
     const cacheKey = `news:${n || ""}:${q || ""}:${searchIn || ""}`;
 
     // Check if data is present in the cache
