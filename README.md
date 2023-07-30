@@ -44,4 +44,14 @@ To get started with the News App, follow the steps below:
 ## Demo
 You can access a live demo of the News App at [GitHub Pages](https://08saurav.github.io/news-api/) (if you choose to deploy it there).
 
+## Screenshots
+![Example Screenshot](./screenshots/1.png)
+![Example Screenshot](./screenshots/2.png)
+![Example Screenshot](./screenshots/3.png)
+![Example Screenshot](./screenshots/4.png)
+
+
+
+
+
 
