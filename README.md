@@ -38,10 +38,22 @@ To get started with the News App, follow the steps below:
 ## How to Run Locally
 1. Open a terminal or command prompt in the project directory.
 2. Start the server by running `node app.js`.
-3. The server will start on http://localhost:3000.
-4. Visit http://localhost:3000 to access the News App.
+3. uncomment apiUrl for localhost and comment https url
+4. change part to 3000 instead of 443
+4. The server will start on http://localhost:3000.
+5. Visit http://localhost:3000 to access the News App.
 
 ## Demo
 You can access a live demo of the News App at [GitHub Pages](https://08saurav.github.io/news-api/) (if you choose to deploy it there).
+
+## Screenshots
+![Example Screenshot](./screenshots/1.png)
+![Example Screenshot](./screenshots/2.png)
+![Example Screenshot](./screenshots/3.png)
+![Example Screenshot](./screenshots/4.png)
+
+
+
+
 
 
