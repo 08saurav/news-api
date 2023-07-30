@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News App</title>
     <link rel="stylesheet" href="./public/styles.css" />
+    <style>
+      /* Custom CSS styles for button sizes and alignment */
+      #search-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      button[type="submit"] {
+        font-size: 14px;
+        padding: 8px 16px;
+        width: fit-content;
+        align-self: flex-end;
+      }
+
+      #news-count {
+        font-size: 16px;
+        padding: 8px;
+        width: 80px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -12,26 +37,43 @@
     </header>
     <main>
       <form id="search-form">
-        <div class="search-inputs">
-          <label for="search-input">Search News:</label>
-          <input
-            type="text"
-            id="search-input"
-            placeholder="Enter keywords..."
-          />
-        </div>
-        <div class="search-inputs">
-          <label for="search-in">Search In:</label>
-          <select id="search-in">
-            <option value="title">Title</option>
-            <option value="description">Description</option>
-            <option value="content">Content</option>
-          </select>
-        </div>
-        <div class="search-inputs">
-          <label for="news-count">Number of Articles:</label>
-          <input type="number" id="news-count" min="1" max="100" value="10" />
-        </div>
+        <fieldset>
+          <legend>Search News:</legend>
+          <div class="search-inputs">
+            <label for="search-input">Keywords:</label>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Enter keywords..."
+            />
+          </div>
+          <div class="search-inputs">
+            <label for="search-in">Search In:</label>
+            <select id="search-in">
+              <option value="title">Title</option>
+              <option value="description">Description</option>
+              <option value="content">Content</option>
+              <option value="title,description">Title And Description</option>
+              <option value="title,description,content">
+                Description, Description And Content
+              </option>
+              <option value="description,content">
+                Description And Content
+              </option>
+            </select>
+          </div>
+          <div class="search-inputs">
+            <label for="news-count">Number of Articles:</label>
+            <input
+              type="number"
+              id="news-count"
+              min="1"
+              max="100"
+              value="SELECT"
+              placeholder="Default: 10"
+            />
+          </div>
+        </fieldset>
         <button type="submit">Search</button>
       </form>
       <div id="news-container"></div>
