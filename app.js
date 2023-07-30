@@ -8,13 +8,6 @@ const cache = new NodeCache({ stdTTL: 60 * 5 }); // Cache TTL set to 5 minutes
 // Middleware to parse JSON data in request body
 app.use(express.json());
 
-// const corsOptions = {
-//   origin: "*",
-//   methods: ["GET", "POST", "PUT", "DELETE"],
-//   allowedHeaders: ["Content-Type", "Authorization"],
-// };
-// app.use(cors(corsOptions));
-
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
@@ -24,6 +17,11 @@ app.use((req, res, next) => {
 
 // Serve the frontend static files
 app.use(express.static("public"));
+
+// health
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" });
+});
 
 // API endpoint for fetching news articles
 app.get("/api/news", async (req, res) => {
@@ -62,7 +60,7 @@ app.get("/api/news", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
