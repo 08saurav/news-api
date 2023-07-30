@@ -1,5 +1,6 @@
 // Define the API endpoint URL (update it to match your backend's route)
-const apiUrl = "http://localhost:3000/api/news";
+const apiUrl = process.env.API_BASE_URL || "http://localhost:3000/api/news";
+// const apiUrl = "http://localhost:3000/api/news";
 
 async function getNews(url) {
   try {
